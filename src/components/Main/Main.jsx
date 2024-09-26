@@ -4,11 +4,12 @@ import { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
-import data from "./MainData.js"; // Make sure to import your data
+import { newData } from "./MainData.js"; // Make sure to import your data
 import "./Main.css"; // Add the CSS below
+import Player from "./Player.jsx";
 
 const Main = () => {
-  const [items, setItems] = useState(data.slice(0, 6)); // Initially load 6 items
+  const [items, setItems] = useState(newData.slice(0, 6)); // Initially load 6 items
   const [hasMore, setHasMore] = useState(true);
 
   // Initialize AOS for animation on scroll
@@ -22,7 +23,7 @@ const Main = () => {
 
   // Function to load more items (simulate infinite scroll)
   const fetchMoreData = () => {
-    if (items.length >= data.length) {
+    if (items.length >= newData.length) {
       setHasMore(false); // No more items to load
       return;
     }
@@ -31,7 +32,7 @@ const Main = () => {
     setTimeout(() => {
       setItems((prevItems) => [
         ...prevItems,
-        ...data.slice(prevItems.length, prevItems.length + 5), // Load 5 more items
+        ...newData.slice(prevItems.length, prevItems.length + 5), // Load 5 more items
       ]);
     });
   };
@@ -48,11 +49,10 @@ const Main = () => {
         <p style={{ textAlign: "center" }}>You've reached the end!</p>
       } // End message
     >
-      <div className="card_container">
+      {/* <div className="card_container">
         {items.map((item) => (
           <div key={item.id} className="card" data-aos="fade-up">
-            {" "}
-            {/* Add animation here */}
+           
             <img src={item.img} alt={item.name} className="card_image" />
             <h2 className="card_title">{item.name}</h2>
             <div className="flex flex-row justify-between items-center mt-[2rem] w-[100%]">
@@ -61,6 +61,14 @@ const Main = () => {
               </b>
               <p>{item.time}</p>
             </div>
+          </div>
+        ))}
+      </div> */}
+
+      <div className="card_container">
+        {newData.map((video) => (
+          <div key={video.id} className="card" data-aos="fade-up">
+            <Player key={video.id} video={video} />
           </div>
         ))}
       </div>
