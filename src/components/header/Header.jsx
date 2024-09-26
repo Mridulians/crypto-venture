@@ -1,10 +1,10 @@
 // import React from 'react'
-import Logo from "../../assets/logo_tele.svg";
+import Logo from "../../assets/Logo.png";
 import Data from "./Rates";
 import "./Header.css";
 import Language from "./Language";
 import { useState } from "react";
-import { data1, data2, data3, data4, data5, data6 } from "../footer/Footer";
+import { data1, data2, data3, data5 } from "../footer/Footer";
 import Cross from "../../assets/cross.png";
 import Cancel from "../../assets/cancel.png";
 import Dropdowns from "./Dropdowns";
@@ -27,17 +27,16 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <img src={Logo} alt="Logo" />
+        <img src={Logo} alt="Logo" className="w-[250px]" />
 
         <div className="coin_rates flex justify-between gap-[1.5rem]">
           {Data.map((item) => {
             const isPositive = parseFloat(item.hike) > 0;
             return (
-              <div
-                key={item.id}
-                className="flex flex-col items-center"
-              >
-                <p className="" style={{color:"#fabc2c"}}>{item.name}</p>
+              <div key={item.id} className="flex flex-col items-center">
+                <p className="" style={{ color: "#fabc2c" }}>
+                  {item.name}
+                </p>
                 <p className="text-white">{item.price}</p>
                 <p style={{ color: isPositive ? "green" : "red" }}>
                   {item.hike}
@@ -108,10 +107,10 @@ const Header = () => {
                 {data1.map((item, index) => {
                   return (
                     <div
-                      className="underline decoration-solid mb-[5px]"
+                      className="hover:underline hover:decoration-solid mb-[5px]"
                       key={index}
                     >
-                      <h1>{item.name}</h1>
+                      <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
                     </div>
                   );
                 })}
@@ -119,15 +118,15 @@ const Header = () => {
             </div>
 
             <div>
-              <h2 className="section_heading text-yellow-600">FEATURES</h2>
-              <div className="footer_lists">
+              <h2 className="section_heading text-yellow-600">CATEGORIES</h2>
+              <div className="sidebar_lists">
                 {data2.map((item, index) => {
                   return (
                     <div
-                      className="underline decoration-solid mb-[5px]"
+                      className="hover:underline hover:decoration-solid mb-[5px]"
                       key={index}
                     >
-                      <h1>{item.name}</h1>
+                      <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
                     </div>
                   );
                 })}
@@ -135,31 +134,15 @@ const Header = () => {
             </div>
 
             <div>
-              <h2 className="section_heading text-yellow-600">MARKET TOOLS</h2>
-              <div className="footer_lists">
+              <h2 className="section_heading text-yellow-600">TOOLS</h2>
+              <div className="sidebar_lists">
                 {data3.map((item, index) => {
                   return (
                     <div
-                      className="underline decoration-solid mb-[5px]"
+                      className="hover:underline hover:decoration-solid mb-[5px]"
                       key={index}
                     >
-                      <h1>{item.name}</h1>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="section_heading text-yellow-600">LEARN</h2>
-              <div className="footer_lists">
-                {data4.map((item, index) => {
-                  return (
-                    <div
-                      className="underline decoration-solid mb-[5px]"
-                      key={index}
-                    >
-                      <h1>{item.name}</h1>
+                      <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
                     </div>
                   );
                 })}
@@ -168,35 +151,20 @@ const Header = () => {
 
             <div>
               <h2 className="section_heading text-yellow-600">ABOUT US</h2>
-              <div className="footer_lists">
+              <div className="sidebar_lists">
                 {data5.map((item, index) => {
                   return (
                     <div
-                      className="underline decoration-solid mb-[5px]"
+                      className="hover:underline hover:decoration-solid mb-[5px]"
                       key={index}
                     >
-                      <h1>{item.name}</h1>
+                      <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
                     </div>
                   );
                 })}
               </div>
             </div>
 
-            <div>
-              <h2 className="section_heading text-yellow-600">INDUSTRY</h2>
-              <div className="footer_lists">
-                {data6.map((item, index) => {
-                  return (
-                    <div
-                      className="underline decoration-solid mb-[5px]"
-                      key={index}
-                    >
-                      <h1>{item.name}</h1>
-                    </div>
-                  );
-                })}
-              </div>
-            </div>
           </div>
         </div>
       )}

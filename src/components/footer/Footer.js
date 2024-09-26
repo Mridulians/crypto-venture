@@ -1,159 +1,77 @@
 const data1 = [
   {
     id: 1,
-    name: "BitCoin",
+    name: "Crypto Currencies",
   },
   {
     id: 2,
-    name: "Blockchain",
+    name: "NFT News",
   },
   {
     id: 3,
-    name: "Ethereum",
+    name: "AI News",
   },
   {
     id: 4,
-    name: "AltCoins",
+    name: "Meta Verse",
   },
   {
     id: 5,
-    name: "Business",
-  },
-  {
-    id: 6,
     name: "Policy and Regulations",
   },
-  {
-    id: 7,
-    name: "AI",
-  },
-  {
-    id: 8,
-    name: "NFTs",
-  },
-  {
-    id: 9,
-    name: "DeFi",
-  },
-  {
-    id: 10,
-    name: "Adoption",
-  },
+  
 ];
+
 
 const data2 = [
   {
     id: 1,
-    name: "Top 100 2023",
+    name: "DEFi",
   },
   {
     id: 2,
-    name: "Top 100 2022",
+    name: "Stable Coins",
   },
   {
     id: 3,
-    name: "Top 100 2021",
+    name: "Memes",
   },
   {
     id: 4,
-    name: "Top 100 2020",
+    name: "Chains",
   },
   {
     id: 5,
-    name: "Magazines",
+    name: "RWA (Real World Assets)",
   },
   {
     id: 6,
-    name: "Analysis",
+    name: "Defin",
   },
   {
     id: 7,
-    name: "Opinion",
+    name: "Gamefi",
   },
   {
     id: 8,
-    name: "Hodler's Digest",
-  },
-  {
-    id: 9,
-    name: "Expert Take",
-  },
-  {
-    id: 10,
-    name: "Top 10",
-  },
-  {
-    id: 11,
-    name: "Cryptocurrencies",
-  },
-  {
-    id: 12,
-    name: "Market Analysis",
-  },
-  {
-    id: 13,
-    name: "Interview",
-  },
-  {
-    id: 14,
-    name: "Historical",
+    name: "Layer Tokens",
   },
 ];
+
+
 
 const data3 = [
   {
     id: 1,
-    name: "Market news",
+    name: "Fear & Greed Index",
   },
   {
     id: 2,
-    name: "Bitcoin Price Index",
-  },
-  {
-    id: 3,
-    name: "Ethereum Price Index",
-  },
-  {
-    id: 4,
-    name: "Bitcoin Cash Price Index",
-  },
-  {
-    id: 5,
-    name: "Litecoin Price Index",
-  },
-  {
-    id: 6,
-    name: "Ripple Price Index",
-  },
-  {
-    id: 7,
-    name: "Monero Price Index",
-  },
-  {
-    id: 8,
-    name: "Memecoins",
-  },
-  {
-    id: 9,
-    name: "Heatmap",
-  },
-  {
-    id: 10,
-    name: "Calculator",
+    name: "Rambo Chart",
   },
 ];
 
-const data4 = [
-  {
-    id: 1,
-    name: "Learn",
-  },
 
-  {
-    id: 2,
-    name: "History of Crypto",
-  },
-];
 
 const data5 = [
   {
@@ -173,18 +91,7 @@ const data5 = [
     id: 4,
     name: "Events",
   },
-  {
-    id: 5,
-    name: "Cointelegraph",
-  },
-  {
-    id: 6,
-    name: "Changelly",
-  },
-  {
-    id: 7,
-    name: "Switchere",
-  },
+  
 ];
 
 const data6 = [
@@ -216,4 +123,4 @@ const data6 = [
   
 ];
 
-export { data1, data2, data3 , data4 , data5 , data6};
+export { data1, data2, data3  , data5 , data6};

@@ -7,9 +7,15 @@
 .footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 3rem;
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    justify-content: flex-start;
+  }
 }
 
 .section_heading {
@@ -36,15 +42,15 @@
 
 .below_footer {
   background-color: black;
-    width: -moz-fit-content;
-    width: fit-content;
-    padding: 1rem 20px;
-    display: flex;
-    justify-content: center;
-    margin: 4rem auto;
-    border-radius: 50px;
-    align-items: center;
-    gap: 2rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem 20px;
+  display: flex;
+  justify-content: center;
+  margin: 4rem auto;
+  border-radius: 50px;
+  align-items: center;
+  gap: 2rem;
 }
 
 .below_footer p {

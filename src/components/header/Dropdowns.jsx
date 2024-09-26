@@ -29,16 +29,11 @@ const Dropdowns = () => {
 
         <div className="dropdown_menus">
           <ul>
-            <li>Bitcoin</li>
-            <li>Blockchain</li>
-            <li>AI</li>
-            <li>Adoption</li>
-            <li>Ethereum</li>
-            <li>Business</li>
-            <li>NFTs</li>
-            <li>Altcoins</li>
+            <li>CRYPTO CURRENCIES</li>
+            <li>NFT NEWS</li>
+            <li>AI NEWS</li>
+            <li>META VERSE</li>
             <li>Policy and Regulations</li>
-            <li>Defi</li>
           </ul>
         </div>
       </div>
@@ -46,7 +41,7 @@ const Dropdowns = () => {
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">
           <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
-            Markets{" "}
+            Categories
             <svg
               data-v-9493e270=""
               width="16"
@@ -68,11 +63,14 @@ const Dropdowns = () => {
 
         <div className="dropdown_menus">
           <ul>
-            <li>Market News</li>
-            <li>Market Analysis</li>
-            <li>Top 10 Cryptocurrencies</li>
-            <li>Calculator</li>
-            <li>HeatMap</li>
+            <li>DEFI</li>
+            <li>STABLE COINS</li>
+            <li>MEMES</li>
+            <li>CHAINS</li>
+            <li>RWA (Real world assets)</li>
+            <li>DEFIN</li>
+            <li>GAMEFI</li>
+            <li>LAYER TOKENS</li>
           </ul>
         </div>
       </div>
@@ -80,7 +78,7 @@ const Dropdowns = () => {
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">
           <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
-            Rankings{" "}
+            Tools
             <svg
               data-v-9493e270=""
               width="16"
@@ -102,9 +100,8 @@ const Dropdowns = () => {
 
         <div className="dropdown_menus">
           <ul>
-            <li>Price Indexes</li>
-            <li>Memecoins</li>
-            <li>CryptoExchanges</li>
+            <li>FEAR & GREED INDEX</li>
+            <li>RAMBO CHART</li>
           </ul>
         </div>
       </div>
@@ -112,7 +109,7 @@ const Dropdowns = () => {
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">
           <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
-            Magazine
+            Articles
           </h2>
         </div>
 
@@ -135,8 +132,8 @@ const Dropdowns = () => {
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">
           <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
-            People{" "}
-            <svg
+            Submit
+            {/* <svg
               data-v-9493e270=""
               width="16"
               height="16"
@@ -151,11 +148,11 @@ const Dropdowns = () => {
                 d="M9.08 3.61a.2.2 0 01.284 0l.777.779a.2.2 0 010 .283L6.944 7.868a.2.2 0 000 .283l3.196 3.197a.2.2 0 010 .283l-.777.778a.2.2 0 01-.283 0L4.822 8.15a.2.2 0 010-.283l4.259-4.257z"
                 fill="currentColor"
               ></path>
-            </svg>{" "}
+            </svg>{" "} */}
           </h2>
         </div>
 
-        <div className="dropdown_menus">
+        {/* <div className="dropdown_menus">
           <ul>
             <li>Top 100 2023</li>
             <li>Top 100 2022</li>
@@ -165,7 +162,7 @@ const Dropdowns = () => {
             <li>Expert Take</li>
             <li>Interviews</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   );
