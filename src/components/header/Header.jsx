@@ -2,7 +2,7 @@
 import Logo from "../../assets/logo_tele.svg";
 import Data from "./Rates";
 import "./Header.css";
-import Language from "./language";
+import Language from "./Language";
 import { useState } from "react";
 import { data1, data2, data3, data4, data5, data6 } from "../footer/Footer";
 import Cross from "../../assets/cross.png";
