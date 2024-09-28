@@ -1,17 +1,18 @@
-// import React from 'react'
-
-// import Dropdowns from "./components/header/Dropdowns";
-
 import Header from "./components/header/Header";
-import Stories from "./components/Stories/Stories";
-
 import Footer from "./components/footer/Footer.jsx";
-import Main from "./components/Main/Main.jsx";
 import ScrollToTop from "react-scroll-to-top";
 import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import FearAndGreed from "./pages/FearAndGreed/FearAndGreed.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import Form from "./pages/SubmissionForm/Form.jsx";
+import CompleteRambo from "./pages/RamboChart/CompleteRambo.jsx";
+import NewsPage from "./pages/News/NewsPage.jsx";
+import Policy from "./pages/Policy/Policy.jsx";
+
 const App = () => {
   return (
-    <div>
+    <>
       <ScrollToTop
         smooth={true}
         top="20"
@@ -27,12 +28,22 @@ const App = () => {
           alignItems: "center",
         }}
       />
-      <Header />
-      <Stories />
 
-      <Main />
+      <Header />
+
+      <div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/fearandgreed" element={<FearAndGreed />} />
+          <Route path="/rambochart" element={<CompleteRambo />} />
+          <Route path="/form" element={<Form />} />
+          <Route path="/news/:category" element={<NewsPage />} />
+          <Route path="/policyandregulations" element={<Policy />} />
+        </Routes>
+      </div>
+
       <Footer />
-    </div>
+    </>
   );
 };
 

@@ -8,6 +8,7 @@ import { data1, data2, data3, data5 } from "../footer/Footer";
 import Cross from "../../assets/cross.png";
 import Cancel from "../../assets/cancel.png";
 import Dropdowns from "./Dropdowns";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -27,7 +28,9 @@ const Header = () => {
   return (
     <>
       <div className="header">
-        <img src={Logo} alt="Logo" className="w-[250px]" />
+        <Link to="/">
+          <img src={Logo} alt="Logo" className="w-[250px]" />
+        </Link>
 
         <div className="coin_rates flex justify-between gap-[1.5rem]">
           {Data.map((item) => {
@@ -164,7 +167,6 @@ const Header = () => {
                 })}
               </div>
             </div>
-
           </div>
         </div>
       )}
