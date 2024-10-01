@@ -4,7 +4,7 @@ import Data from "./Rates";
 import "./Header.css";
 import Language from "./Language";
 import { useState } from "react";
-import { data1, data2, data3, data5 } from "../footer/Footer";
+import { data1, data3, data5 } from "../footer/Footer";
 import Cross from "../../assets/cross.png";
 import Cancel from "../../assets/cancel.png";
 import Dropdowns from "./Dropdowns";
@@ -124,7 +124,7 @@ const Header = () => {
               </div>
             </div>
 
-            <div>
+            {/* <div>
               <h2 className="section_heading text-yellow-600">CATEGORIES</h2>
               <div className="sidebar_lists">
                 {data2.map((item, index) => {
@@ -138,7 +138,7 @@ const Header = () => {
                   );
                 })}
               </div>
-            </div>
+            </div> */}
 
             <div>
               <h2 className="section_heading text-yellow-600">TOOLS</h2>

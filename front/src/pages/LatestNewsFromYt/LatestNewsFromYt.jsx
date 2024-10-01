@@ -4,44 +4,39 @@ import axios from "axios";
 const LatestNewsFromYt = () => {
   const [videos, setVideos] = useState([]);
   const [error, setError] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [searchQuery, setSearchQuery] = useState(
     "News related to crypto currency"
   ); // Default search query
-  const [country, setCountry] = useState(""); // Country filter
 
-  const YOUTUBE_API_KEY = "AIzaSyCUw5T0c-KXR-PLNbWH91cx1FY9IqvOonA"; // Replace with your API key
-  const MAX_RESULTS = 100; // Set the maximum number of videos
 
-  // Function to fetch videos based on the search query and country filter
+
+
+
+
   const fetchVideos = async (query, regionCode) => {
     try {
-      const response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search`,
-        {
-          params: {
-            part: "snippet",
-            q: query,
-            type: "video",
-            maxResults: MAX_RESULTS,
-            key: YOUTUBE_API_KEY,
-            creator_country: regionCode || "", // Only send if country is selected
-            safeSearch: "strict",
-          },
-        }
-      );
+      // Make a request to the backend proxy instead of YouTube API directly
+      const response = await axios.get('http://localhost:4000/api/youtube', {
+        params: {
+          q: query,
+          regionCode: regionCode, // Optional country filter
+        },
+      });
       setVideos(response.data.items);
     } catch (err) {
       setError("Failed to fetch videos");
       console.error(err);
     }
   };
+  
 
   console.log(videos);
 
   // Fetch videos on component mount and whenever the search query or country changes
   useEffect(() => {
-    fetchVideos(searchQuery, country);
-  }, [searchQuery, country]);
+    fetchVideos(searchQuery);
+  }, [searchQuery]);
 
   if (error) {
     return <div>Error: {error}</div>;
@@ -96,7 +91,7 @@ const LatestNewsFromYt = () => {
             >
               <a
                 href={`https://www.youtube.com/watch?v=${video.id.videoId}`}
-                target="_blank"
+                // target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
