@@ -69,6 +69,10 @@ const data3 = [
     id: 2,
     name: "Rambo Chart",
   },
+  {
+    id: 3,
+    name: "Dune",
+  },
 ];
 
 
@@ -76,21 +80,21 @@ const data3 = [
 const data5 = [
   {
     id: 1,
-    name: "Research",
+    name: "Know Us",
   },
 
   {
     id: 2,
-    name: "Podcasts",
+    name: "Submit a Request",
   },
-  {
-    id: 3,
-    name: "Press Release",
-  },
-  {
-    id: 4,
-    name: "Events",
-  },
+  // {
+  //   id: 3,
+  //   name: "Press Release",
+  // },
+  // {
+  //   id: 4,
+  //   name: "Events",
+  // },
   
 ];
 

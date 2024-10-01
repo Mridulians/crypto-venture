@@ -1,8 +1,13 @@
 .complete_footer {
   background-color: #192024;
-  color: white;
+  /* color: white; */
   font-family: sans-serif;
-  padding: 4rem 4rem;
+  padding: 4rem 2rem;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .footer {
   display: flex;
@@ -10,6 +15,8 @@
   justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
+  color: white;
+ width: 50%;
 }
 
 @media screen and (max-width: 500px) {
@@ -72,5 +79,9 @@
 @media screen and (max-width: 768px) {
   .complete_footer {
     padding: 4rem 1rem;
+    flex-direction: column;
+  }
+  .footer{
+    width: 100%;
   }
 }

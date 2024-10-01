@@ -14,9 +14,14 @@ const NewsPage = () => {
           params: {
             q: category, // Use the category as the query parameter
             apiKey: "45fdfe58da864dd7843632e3d4f6d9b9", // Your API key
+            sortBy: "publishedAt", // Sorting by published date
+            language: "en", // Set language to English
           },
         });
-        setNews(response.data.articles); // Assuming the API returns articles in `data.articles`
+        const sortedNews = response.data.articles.sort(
+          (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt) // Sorting in descending order
+        );
+        setNews(sortedNews); // Set the sorted articles to the state
       } catch (error) {
         console.error("Error fetching news:", error);
       }
@@ -59,13 +64,15 @@ const NewsPage = () => {
               </p>
 
               <div className="flex flex-row justify-between my-[1rem]">
-                <p className="text-red-700">{item.publishedAt}</p>
+                <p className="text-red-700">
+                  {new Date(item.publishedAt).toLocaleDateString()}
+                </p>
                 <p className="text-green-700">{item.source.name}</p>
               </div>
               <a
                 href={item.url}
                 className="text-blue-500 underline"
-                target="_blank"
+                // target="_blank"
                 rel="noopener noreferrer"
               >
                 Read more

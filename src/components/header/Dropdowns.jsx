@@ -12,11 +12,10 @@ const Dropdowns = () => {
 
   return (
     <div className="dropdown_complete">
-
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">
           <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
-            News{" "}
+            Latest News{" "}
             <svg
               data-v-9493e270=""
               width="16"
@@ -44,12 +43,15 @@ const Dropdowns = () => {
             <li onClick={() => handleCategoryClick("nft")}>NFT NEWS</li>
             <li onClick={() => handleCategoryClick("ai")}>AI NEWS</li>
             <li onClick={() => handleCategoryClick("metaverse")}>META VERSE</li>
-           <Link to="/policyandregulations"> <li>POLICY AND REGULATIONS</li></Link>
+            <Link to="/policyandregulations">
+              {" "}
+              <li>POLICY AND REGULATIONS</li>
+            </Link>
           </ul>
         </div>
       </div>
 
-      <div className="dropdown_complete_first">
+      {/* <div className="dropdown_complete_first">
         <div className="drop_item_heading">
           <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
             Categories
@@ -84,7 +86,7 @@ const Dropdowns = () => {
             <li>LAYER TOKENS</li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">
@@ -117,17 +119,20 @@ const Dropdowns = () => {
             <Link to="/rambochart">
               <li>RAMBO CHART</li>
             </Link>
+            <Link to="https://dune.com/home">
+              <li>DUNE</li>
+            </Link>
           </ul>
         </div>
       </div>
 
-      <div className="dropdown_complete_first">
+      {/* <div className="dropdown_complete_first">
         <div className="drop_item_heading">
           <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
-            Articles
+            Latest News
           </h2>
         </div>
-      </div>
+      </div> */}
 
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">

@@ -28,7 +28,7 @@ const NewsLetter = () => {
         </div>
 
         <div className='input_email_section'>
-            <p className='news_heading'>COINTELEGRAPH NEWSLETTER</p>
+            <p className='news_heading'>CRYPTO VENTURES NEWSLETTER</p>
             <div className='flex flex-row'>
                 <input className='subscribe_input' type="email" placeholder='Enter Your Email Here'/>
                 <button className='subscribe_btn'>Subscribe</button>
@@ -51,11 +51,11 @@ const NewsLetter = () => {
 
         <div>
             <p>Terms of services and Privacy policy</p>
-            <p>© Cointelegraph 2013 - 2024</p>
+            <p>© CryptoVentures 2024</p>
         </div>
 
 
-        <p>Cointelegraph covers fintech, blockchain and Bitcoin bringing you the latest crypto news and analyses on the future of money.</p>
+        <p>Crypto Ventures covers fintech, blockchain and Bitcoin bringing you the latest crypto news and analyses on the future of money.</p>
         
        </div>
 

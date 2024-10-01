@@ -9,6 +9,7 @@ import Cross from "../../assets/cross.png";
 import Cancel from "../../assets/cancel.png";
 import Dropdowns from "./Dropdowns";
 import { Link } from "react-router-dom";
+import RatesSlider from "./RatesSlider";
 
 const Header = () => {
   const [sidebarVisible, setSidebarVisible] = useState(false);
@@ -32,21 +33,23 @@ const Header = () => {
           <img src={Logo} alt="Logo" className="w-[250px]" />
         </Link>
 
-        <div className="coin_rates flex justify-between gap-[1.5rem]">
-          {Data.map((item) => {
-            const isPositive = parseFloat(item.hike) > 0;
-            return (
-              <div key={item.id} className="flex flex-col items-center">
-                <p className="" style={{ color: "#fabc2c" }}>
-                  {item.name}
-                </p>
-                <p className="text-white">{item.price}</p>
-                <p style={{ color: isPositive ? "green" : "red" }}>
-                  {item.hike}
-                </p>
-              </div>
-            );
-          })}
+        <div className="slider_banner_for_rates">
+          <div className="coin_rates">
+            {Data.map((item, index) => {
+              const isPositive = parseFloat(item.hike) > 0;
+              return (
+                <div key={index} className="coin-item">
+                  <p className="" style={{ color: "#fabc2c" }}>
+                    {item.name}
+                  </p>
+                  <p className="text-white">{item.price}</p>
+                  <p style={{ color: isPositive ? "green" : "red" }}>
+                    {item.hike}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="select_wrapper">
@@ -93,6 +96,7 @@ const Header = () => {
           ></path>
         </svg>
       </nav>
+      <RatesSlider />
 
       {sidebarVisible && (
         <div className={`sidebar_content ${sidebarVisible ? "show" : ""}`}>

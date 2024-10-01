@@ -1,13 +1,15 @@
 // import React from 'react'
-import { data1, data2, data3, data5 } from "./Footer.js";
+import { data1, data3, data5 } from "./Footer.js";
 import "./Footer.css";
 import New from "./New.jsx";
+import Review from '../Review/Review.jsx'
 const Footer = () => {
   return (
     <>
       <div className="complete_footer">
 
         <div className="footer">
+
           <div>
             <h2 className="section_heading">NEWS</h2>
             <div className="footer_lists">
@@ -21,7 +23,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          {/* <div>
             <h2 className="section_heading">CATEGORIES</h2>
             <div className="footer_lists">
               {data2.map((item, index) => {
@@ -32,7 +34,7 @@ const Footer = () => {
                 );
               })}
             </div>
-          </div>
+          </div> */}
 
           <div>
             <h2 className="section_heading">TOOLS</h2>
@@ -62,24 +64,11 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* <div>
-            <h2 className="section_heading">INDUSTRY</h2>
-            <div className="footer_lists">
-              {data6.map((item, index) => {
-                return (
-                  <div key={index}>
-                    <h1>{item.name}</h1>
-                  </div>
-                );
-              })}
-            </div>
-          </div> */}
+        
         </div>
-
-        {/* <div className="below_footer">
-          <p>Are you a journalist or an editor?</p>
-          <button>Join us</button>
-        </div> */}
+         
+         <Review />
+        
 
       </div>
 

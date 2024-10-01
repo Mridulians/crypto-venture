@@ -49,21 +49,6 @@ const Main = () => {
         <p style={{ textAlign: "center" }}>You've reached the end!</p>
       } // End message
     >
-      {/* <div className="card_container">
-        {items.map((item) => (
-          <div key={item.id} className="card" data-aos="fade-up">
-           
-            <img src={item.img} alt={item.name} className="card_image" />
-            <h2 className="card_title">{item.name}</h2>
-            <div className="flex flex-row justify-between items-center mt-[2rem] w-[100%]">
-              <b>
-                <p>{item.by}</p>
-              </b>
-              <p>{item.time}</p>
-            </div>
-          </div>
-        ))}
-      </div> */}
 
       <div className="card_container">
         {newData.map((video) => (

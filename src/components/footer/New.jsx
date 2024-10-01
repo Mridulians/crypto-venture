@@ -6,8 +6,18 @@ import Fb from "../../assets/communication.png";
 import Telegram from "../../assets/telegram.png";
 import Twitter from "../../assets/twitter (1).png";
 import Yt from "../../assets/youtube.png";
+import { useState } from "react";
 
 const New = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleClick = () => {
+    setShowPopup(true);
+    setTimeout(() => {
+      setShowPopup(false); // Automatically hide the popup after 2 seconds
+    }, 1000);
+  };
+
   return (
     <>
       <div className="bg-zinc-800 p-[2rem] text-white font-sans">
@@ -21,7 +31,6 @@ const New = () => {
                 <img className="w-[30px] h-[30px]" src={Fb} alt="" />
                 <img className="w-[30px] h-[30px]" src={Telegram} alt="" />
                 <img className="w-[30px] h-[30px]" src={Yt} alt="" />
-                {/* <img className="w-[30px] h-[30px]" src={Twitter} alt="" /> */}
               </div>
             </div>
 
@@ -29,13 +38,13 @@ const New = () => {
               <p className="opacity-[0.6]">
                 Terms of services and Privacy policy
               </p>
-              <p className="opacity-[0.6]">© Cointelegraph 2013 - 2024</p>
+              <p className="opacity-[0.6]">© CryptoVentures 2024</p>
             </div>
           </div>
 
           <div className="w-[50%] flex flex-col gap-[1.5rem]">
             <div className="flex flex-col gap-[10px]">
-              <p className="opacity-[0.6]">COINTELEGRAPH NEWSLETTER</p>
+              <p className="opacity-[0.6]">CRYPTOVENTURES NEWSLETTER</p>
               <div className="flex flex-row items-center">
                 <input
                   type="email"
@@ -50,7 +59,7 @@ const New = () => {
 
             <div>
               <p className="opacity-[0.6]">
-                Cointelegraph covers fintech, blockchain and Bitcoin bringing
+                Crypto Ventures covers fintech, blockchain and Bitcoin bringing
                 you the latest crypto news and analyses on the future of money.
               </p>
             </div>
@@ -59,19 +68,23 @@ const New = () => {
           <div className="w-[20%] flex flex-col gap-[1.5rem] mb-[3rem]">
             <p className="opacity-[0.6]">MOBILE APPS</p>
             <div className="flex flex-row items-center gap-[10px]">
-              <img className="w-[50%]" src={PlayStore} alt="" />
-              <img className="w-[50%]" src={AppStore} alt="" />
+              <img className="w-[50%] cursor-pointer" src={PlayStore} alt="" onClick={handleClick}/>
+              <img className="w-[50%] cursor-pointer" src={AppStore} alt="" onClick={handleClick}/>
             </div>
           </div>
-
+          {showPopup && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white p-4 rounded-md shadow-lg">
+                <p className="text-lg text-center text-black">Launching soon</p>
+              </div>
+            </div>
+          )}
         </div>
 
-
         <div className="flex md:hidden flex-col gap-[2rem]">
-
           <div className="flex flex-col gap-[1.5rem]">
             <div className="flex flex-col gap-[10px]">
-              <p className="opacity-[0.6]">COINTELEGRAPH NEWSLETTER</p>
+              <p className="opacity-[0.6]">CRYPTOVENTURES NEWSLETTER</p>
               <div className="flex flex-row items-center">
                 <input
                   type="email"
@@ -86,7 +99,7 @@ const New = () => {
 
             <div>
               <p className="opacity-[0.6]">
-                Cointelegraph covers fintech, blockchain and Bitcoin bringing
+                Crypto Ventures covers fintech, blockchain and Bitcoin bringing
                 you the latest crypto news and analyses on the future of money.
               </p>
             </div>
@@ -95,10 +108,18 @@ const New = () => {
           <div className="flex flex-col gap-[1.5rem]">
             <p className="opacity-[0.6]">MOBILE APPS</p>
             <div className="flex flex-row items-center gap-[10px]">
-              <img className="w-[50%]" src={PlayStore} alt="" />
-              <img className="w-[50%]" src={AppStore} alt="" />
+              <img className="w-[50%]" src={PlayStore} alt="" onClick={handleClick}/>
+              <img className="w-[50%]" src={AppStore} alt="" onClick={handleClick}/>
             </div>
           </div>
+
+          {showPopup && (
+            <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+              <div className="bg-white p-4 rounded-md shadow-lg">
+                <p className="text-lg text-center text-black">Launching soon</p>
+              </div>
+            </div>
+          )}
 
           <div className="flex flex-col gap-[1.5rem]">
             <div className="flex flex-col gap-[10px]">
@@ -116,12 +137,10 @@ const New = () => {
               <p className="opacity-[0.6]">
                 Terms of services and Privacy policy
               </p>
-              <p className="opacity-[0.6]">© Cointelegraph 2013 - 2024</p>
+              <p className="opacity-[0.6]">© Crypto Ventures 2024</p>
             </div>
           </div>
-
         </div>
-
       </div>
     </>
   );
