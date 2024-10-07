@@ -43,10 +43,10 @@ const Dropdowns = () => {
             <li onClick={() => handleCategoryClick("nft")}>NFT NEWS</li>
             <li onClick={() => handleCategoryClick("ai")}>AI NEWS</li>
             <li onClick={() => handleCategoryClick("metaverse")}>META VERSE</li>
-            <Link to="/policyandregulations">
+            {/* <Link to="/policyandregulations">
               {" "}
               <li>POLICY AND REGULATIONS</li>
-            </Link>
+            </Link> */}
           </ul>
         </div>
       </div>
@@ -128,11 +128,23 @@ const Dropdowns = () => {
 
       {/* <div className="dropdown_complete_first">
         <div className="drop_item_heading">
-          <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
-            Latest News
-          </h2>
+          <Link to="/cryptoVc">
+            <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
+              Crypto VCs
+            </h2>
+          </Link>
         </div>
       </div> */}
+
+      <div className="dropdown_complete_first">
+        <div className="drop_item_heading">
+          <Link to="/blog">
+            <h2 className="flex flex-row items-center gap-[5px] text-[18px]">
+              Blogs
+            </h2>
+          </Link>
+        </div>
+      </div>
 
       <div className="dropdown_complete_first">
         <div className="drop_item_heading">

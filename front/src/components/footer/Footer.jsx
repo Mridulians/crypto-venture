@@ -3,6 +3,7 @@ import { data1, data3, data5 } from "./Footer.js";
 import "./Footer.css";
 import New from "./New.jsx";
 import Review from '../Review/Review.jsx'
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <>
@@ -16,12 +17,16 @@ const Footer = () => {
               {data1.map((item, index) => {
                 return (
                   <div key={index}>
-                    <h1>{item.name}</h1>
+                    <Link to={`/news${item.link}`}>
+                        <h1>{item.name}</h1>
+                      </Link>
                   </div>
                 );
               })}
             </div>
           </div>
+
+         
 
           {/* <div>
             <h2 className="section_heading">CATEGORIES</h2>
@@ -42,12 +47,19 @@ const Footer = () => {
               {data3.map((item, index) => {
                 return (
                   <div key={index}>
-                    <h1>{item.name}</h1>
+                   <Link
+                        to={item.link ? item.link : "https://dune.com/home"}
+                      >
+                        {" "}
+                        <h1>{item.name}</h1>
+                      </Link>
                   </div>
                 );
               })}
             </div>
           </div>
+
+          
 
         
 
@@ -57,12 +69,17 @@ const Footer = () => {
               {data5.map((item, index) => {
                 return (
                   <div key={index}>
-                    <h1>{item.name}</h1>
+                      <Link to={item.link}>
+                        {" "}
+                        <h1>{item.name}</h1>
+                      </Link>
                   </div>
                 );
               })}
             </div>
           </div>
+
+        
 
         
         </div>

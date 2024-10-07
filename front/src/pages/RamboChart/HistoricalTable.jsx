@@ -19,8 +19,30 @@ const HistoricalTable = ({ crypto }) => {
     fetchHistoricalData();
   }, [crypto]);
 
-  // Get the last 10 entries
-  const last10DaysData = historicalData.slice(-10);
+  // Function to extract only one price per day
+  const getDailyData = (data) => {
+    const dailyData = [];
+    const seenDates = new Set();
+
+    // Filter the data by distinct day (ignoring the time)
+    for (const entry of data) {
+      const date = new Date(entry[0]);
+      const day = date.getUTCDate(); // Get the day of the month
+      const month = date.getUTCMonth(); // Get the month (0-based)
+      const year = date.getUTCFullYear(); // Get the year
+
+      const formattedDate = `${year}-${month}-${day}`;
+
+      if (!seenDates.has(formattedDate)) {
+        seenDates.add(formattedDate);
+        dailyData.push(entry); // Push only one entry per distinct day
+      }
+    }
+
+    return dailyData.slice(-10).reverse(); // Get the last 10 distinct days in descending order
+  };
+
+  const last10DaysData = getDailyData(historicalData);
 
   return (
     <div className="bg-white p-6 shadow-lg rounded-lg mt-8">
@@ -40,21 +62,26 @@ const HistoricalTable = ({ crypto }) => {
             </tr>
           </thead>
           <tbody>
-            {last10DaysData.map((data, index) => (
-              <tr
-                key={index}
-                className={`border-b ${
-                  index % 2 === 0 ? "bg-gray-50" : "bg-white"
-                } hover:bg-gray-200`}
-              >
-                <td className="px-6 py-4 text-gray-700">
-                  {new Date(data[0]).toLocaleDateString()}
-                </td>
-                <td className="px-6 py-4 text-gray-900 font-medium">
-                  ${data[1].toFixed(2)}
-                </td>
-              </tr>
-            ))}
+            {last10DaysData.map((data, index) => {
+              const date = new Date(data[0]);
+              const formattedDate = `${
+                date.getUTCMonth() + 1
+              }/${date.getUTCDate()}/${date.getUTCFullYear()}`; // Format to MM/DD/YYYY
+
+              return (
+                <tr
+                  key={index}
+                  className={`border-b ${
+                    index % 2 === 0 ? "bg-gray-50" : "bg-white"
+                  } hover:bg-gray-200`}
+                >
+                  <td className="px-6 py-4 text-gray-700">{formattedDate}</td>
+                  <td className="px-6 py-4 text-gray-900 font-medium">
+                    ${data[1].toFixed(2)}
+                  </td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

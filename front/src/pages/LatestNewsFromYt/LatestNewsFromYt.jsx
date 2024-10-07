@@ -31,7 +31,7 @@ const LatestNewsFromYt = () => {
   };
   
 
-  console.log(videos);
+  // console.log(videos);
 
   // Fetch videos on component mount and whenever the search query or country changes
   useEffect(() => {

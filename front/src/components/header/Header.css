@@ -195,16 +195,12 @@
   }
 }
 
-.slider_banner_for_rates {
-  /* width: 100%; Set container width */
-  overflow: hidden; /* Hide overflow */
-  white-space: nowrap; /* Prevent wrapping */
-}
+/* CSS FOR RATES SLIDER */
 
 .coin_rates {
   display: inline-flex; /* Use inline-flex for continuous scrolling */
   gap: 1.5rem;
-  animation: slide 15s linear infinite; /* Create smooth infinite scroll */
+  /* animation: slide 15s linear infinite; Create smooth infinite scroll */
 }
 
 .coin-item {
@@ -235,11 +231,39 @@
   overflow: hidden; /* Hide overflow */
   white-space: nowrap; /* Prevent wrapping */
   display: none;
+  padding: 10px 0px;
+}
+
+.slider_banner_for_rates_desktop_view {
+  /* width: 100%; Set container width */
+  overflow: hidden; /* Hide overflow */
+  white-space: nowrap; /* Prevent wrapping */
+  display: flex;
+  margin: 0rem 2rem;
 }
 
 @media screen and (max-width: 950px) {
   .slider_banner_for_rates_mobile_view {
-    display: block;
+    display: flex;
     background-color: #0a0606;
+    justify-content: center;
+  }
+
+  .coin_rates {
+    /* display: inline-flex; Use inline-flex for continuous scrolling */
+    gap: 1rem;
+  }
+
+  .slider_banner_for_rates_desktop_view {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .coin-item {
+    min-width: 30px;
+  }
+  .hidden-at-500 {
+    display: none;
   }
 }

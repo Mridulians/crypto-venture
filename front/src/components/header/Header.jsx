@@ -1,6 +1,6 @@
 // import React from 'react'
 import Logo from "../../assets/Logo.png";
-import Data from "./Rates";
+// import Data from "./Rates";
 import "./Header.css";
 import Language from "./Language";
 import { useState } from "react";
@@ -33,24 +33,7 @@ const Header = () => {
           <img src={Logo} alt="Logo" className="w-[250px]" />
         </Link>
 
-        <div className="slider_banner_for_rates">
-          <div className="coin_rates">
-            {Data.map((item, index) => {
-              const isPositive = parseFloat(item.hike) > 0;
-              return (
-                <div key={index} className="coin-item">
-                  <p className="" style={{ color: "#fabc2c" }}>
-                    {item.name}
-                  </p>
-                  <p className="text-white">{item.price}</p>
-                  <p style={{ color: isPositive ? "green" : "red" }}>
-                    {item.hike}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        <RatesSlider />
 
         <div className="select_wrapper">
           <Language />
@@ -76,7 +59,9 @@ const Header = () => {
           ></path>
         </svg>
 
-        <img src={Logo} alt="" className="mobile_logo" />
+        <Link to="/">
+          <img src={Logo} alt="" className="mobile_logo" />
+        </Link>
 
         <svg
           width="24"
@@ -96,7 +81,9 @@ const Header = () => {
           ></path>
         </svg>
       </nav>
-      <RatesSlider />
+      <div className="mg:hidden">
+        <RatesSlider />
+      </div>
 
       {sidebarVisible && (
         <div className={`sidebar_content ${sidebarVisible ? "show" : ""}`}>
@@ -117,7 +104,9 @@ const Header = () => {
                       className="hover:underline hover:decoration-solid mb-[5px]"
                       key={index}
                     >
-                      <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
+                      <Link to={`/news${item.link}`}>
+                        <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
+                      </Link>
                     </div>
                   );
                 })}
@@ -149,7 +138,12 @@ const Header = () => {
                       className="hover:underline hover:decoration-solid mb-[5px]"
                       key={index}
                     >
-                      <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
+                      <Link
+                        to={item.link ? item.link : "https://dune.com/home"}
+                      >
+                        {" "}
+                        <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
+                      </Link>
                     </div>
                   );
                 })}
@@ -165,7 +159,10 @@ const Header = () => {
                       className="hover:underline hover:decoration-solid mb-[5px]"
                       key={index}
                     >
-                      <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
+                      <Link to={item.link}>
+                        {" "}
+                        <h1 className="sidebar_h1s mb-[5px]">{item.name}</h1>
+                      </Link>
                     </div>
                   );
                 })}
