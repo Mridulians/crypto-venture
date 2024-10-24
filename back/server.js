@@ -1,8 +1,12 @@
+import dotenv from "dotenv";
+// Load environment variables
+dotenv.config();
+
+
 import express from "express";
 import cors from "cors";
 import { connectDB } from "./config/db.js";
 import axios from "axios";
-import dotenv from "dotenv";
 import blogRouter from "./routes/blogRoute.js";
 
 const app = express();
@@ -11,8 +15,7 @@ const PORT = process.env.PORT || 4000;
 // Enable CORS
 app.use(cors());
 
-// Load environment variables
-dotenv.config();
+
 
 app.use(express.json()); // Add this if missing
 app.use(express.urlencoded({ extended: true }));
