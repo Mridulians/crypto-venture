@@ -1,4 +1,4 @@
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
 import mongoose from "mongoose";
 
 const mongoDbUrl = process.env.MONGODB_URL;
