@@ -1,17 +1,17 @@
 /* eslint-disable react/prop-types */
 import cn from "../../lib/utils.jsx";
 import { AnimatePresence, motion } from "framer-motion";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 export const HoverEffect = ({ items, className }) => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 py-10", className)}>
+    <div className={cn("grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 pb-[2.5rem]", className)}>
       {items.map((item, idx) => (
         <Link
-          href={item?.link}
+          to={item?.link}
           key={item?.link}
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
@@ -28,9 +28,18 @@ export const HoverEffect = ({ items, className }) => {
               />
             )}
           </AnimatePresence>
+
           <Card>
+            <img
+              src={'https://crypto-venture-backend.onrender.com' + "/images/" +  item.image}
+              alt={item.title}
+              className="w-full h-40 object-cover rounded-2xl"
+            />
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
+            <Link to={item?.link} className="text-blue-500 mt-4 inline-block">
+              Read More
+            </Link>
           </Card>
         </Link>
       ))}
@@ -42,13 +51,11 @@ export const Card = ({ className, children }) => {
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-black border-[5px] border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
-      <div className="relative z-50">
-        <div className="p-4">{children}</div>
-      </div>
+      <div className="relative z-50">{children}</div>
     </div>
   );
 };
@@ -63,7 +70,7 @@ export const CardTitle = ({ className, children }) => {
 
 export const CardDescription = ({ className, children }) => {
   return (
-    <p className={cn("mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm", className)}>
+    <p className={cn("mt-4 text-zinc-400 tracking-wide leading-relaxed text-sm", className)}>
       {children}
     </p>
   );

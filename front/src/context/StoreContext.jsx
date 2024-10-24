@@ -7,7 +7,7 @@ export const StoreContext = createContext(null);
 const StoreContextProvider = (props) => {
   const [blog_list, setBlogList] = useState([]);
 
-  const url = "http://localhost:4000";
+  const url = "https://crypto-venture-backend.onrender.com";
 
   const fetchBlogList = async () => {
     const response = await axios.get(url + "/api/blog/list");

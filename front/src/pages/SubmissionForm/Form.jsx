@@ -1,17 +1,21 @@
 /* eslint-disable react/no-unescaped-entities */
 // import React from "react";
 
+import Dropdowns from "../../components/header/Dropdowns";
+
 const Form = () => {
   return (
-    <div className="flex flex-col justify-center items-center min-h-screen bg-white">
-      <div className="w-full bg-white p-8 shadow-lg">
+    <div className="flex flex-col justify-center items-center min-h-screen bg-black">
+      <Dropdowns/>
+
+      <div className="w-full bg-black p-8 shadow-lg">
         {/* Heading */}
-        <h1 className="text-2xl font-bold text-black mb-4">
+        <h1 className="text-2xl font-bold text-gray-400 mb-4">
           Write Blogs and Articles for Us to Enhance Your Readability and Reach
         </h1>
 
         {/* Paragraph */}
-        <p className="text-black mb-8">
+        <p className="text-white mb-8">
           By writing blogs and articles for us, you will get the opportunity to
           showcase your writing skills to a broader audience, improve your
           online presence, and grow your network. Additionally, you'll enhance
@@ -20,12 +24,12 @@ const Form = () => {
         </p>
 
         {/* Form Starts */}
-        <form className="max-w-[32rem] m-auto">
+        <form className="max-w-[32rem] m-auto ">
           {/* First and Last Name */}
           <div className="flex flex-wrap -mx-3 mb-6">
             <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
               <label
-                className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                 htmlFor="first-name"
               >
                 First Name
@@ -39,7 +43,7 @@ const Form = () => {
             </div>
             <div className="w-full md:w-1/2 px-3">
               <label
-                className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+                className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
                 htmlFor="last-name"
               >
                 Last Name
@@ -56,7 +60,7 @@ const Form = () => {
           {/* Email */}
           <div className="mb-6">
             <label
-              className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               htmlFor="email"
             >
               Email
@@ -72,7 +76,7 @@ const Form = () => {
           {/* Password */}
           <div className="mb-6">
             <label
-              className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               htmlFor="password"
             >
               Password
@@ -88,7 +92,7 @@ const Form = () => {
           {/* Area of Interest */}
           <div className="mb-6">
             <label
-              className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               htmlFor="area-of-interest"
             >
               Area that interests you
@@ -104,7 +108,7 @@ const Form = () => {
           {/* Why do you want to write for us? */}
           <div className="mb-6">
             <label
-              className="block uppercase tracking-wide text-black text-xs font-bold mb-2"
+              className="block uppercase tracking-wide text-white text-xs font-bold mb-2"
               htmlFor="reason"
             >
               Why do you want to write for us?
@@ -120,7 +124,7 @@ const Form = () => {
           {/* Submit Button */}
           <div className="flex justify-center">
             <button
-              className="bg-[#fabc2c] hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              className="bg-[#fabc2c] hover:bg-white hover:text-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
             >
               Submit

@@ -1,4 +1,3 @@
-
 /* eslint-disable react/prop-types */
 // import React from 'react'
 import "./List.css";
@@ -6,7 +5,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
-const List = ({ url = "http://localhost:4000" }) => {
+const List = ({ url = "https://crypto-venture-backend.onrender.com" }) => {
   const [list, setList] = useState([]);
 
   // const url = "http://localhost:4000";
@@ -37,8 +36,7 @@ const List = ({ url = "http://localhost:4000" }) => {
   useEffect(() => {
     fetchList();
   }, []);
-  
-  
+
   return (
     <div className="list add flex-col">
       <p>All Foods List</p>
@@ -53,10 +51,13 @@ const List = ({ url = "http://localhost:4000" }) => {
           return (
             <div key={index} className="list-table-format">
               <img src={`${url}/images/` + item.image} alt="" />
-              <p>{item.title}</p>
-              <p>{item.category}</p>
+              <p className="text-black">{item.title}</p>
+              <p className="text-black">{item.category}</p>
               {/* <p>$ {item.price}</p> */}
-              <p onClick={() => removeBlog(item._id)} className="cursor-pointer">
+              <p
+                onClick={() => removeBlog(item._id)}
+                className="cursor-pointer text-black"
+              >
                 X
               </p>
             </div>

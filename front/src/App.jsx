@@ -15,7 +15,8 @@ import Scroll from "./components/ScrollToTop/Scroll.jsx";
 import Testing from "./Testing.jsx";
 // import CryptoVC from "./pages/CryptoVc/CryptoVC.jsx";
 import AllTokens from "./pages/AllTokens/AllTokens.jsx";
-import { Slider } from "./pages/MainSlider/Slider.jsx";
+import Slider  from "./pages/MainSlider/Slider.jsx";
+import Slider2  from "./pages/MainSlider/Slider2.jsx";
 
 const App = () => {
   return (
@@ -38,7 +39,7 @@ const App = () => {
 
       <Header />
 
-      <div className="bg-black pt-[2rem]">
+      {/* <> */}
         <Scroll />
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -53,9 +54,10 @@ const App = () => {
           <Route path="/alltokens" element={<AllTokens />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/slide" element={<Slider />} />
+          <Route path="/slide2" element={<Slider2 />} />
 
         </Routes>
-      </div>
+      {/* </> */}
 
       {/* <Review /> */}
       <Footer />

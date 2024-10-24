@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import Dropdowns from '../../components/header/Dropdowns';
 
 // Helper function to format numbers
 const formatNumber = (num) => {
@@ -21,10 +22,11 @@ const AllTokens = () => {
   }, []);
 
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">All Tokens</h2>
+    <div className="container mx-auto p-4 bg-black">
+      <Dropdowns />
+      <h2 className="text-2xl font-bold mb-4 text-white">All Tokens</h2>
       <div className="overflow-x-auto">
-        <table className="min-w-full bg-white border border-gray-200">
+        <table className="min-w-full bg-black border border-gray-200">
           <thead>
             <tr className="bg-gray-100">
               <th className="py-2 px-4 text-left text-gray-700">#</th>
@@ -36,9 +38,9 @@ const AllTokens = () => {
               <th className="py-2 px-4 text-right text-gray-700">Circulating Supply</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className='text-white'>
             {tokens.map((token, index) => (
-              <tr key={token.id} className="border-t hover:bg-gray-50">
+              <tr key={token.id} className="border-t">
                 <td className="py-2 px-4">{index + 1}</td>
                 <td className="py-2 px-4 flex items-center">
                   <img

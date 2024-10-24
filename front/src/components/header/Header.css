@@ -92,7 +92,7 @@
 
 .dropdown_complete {
   display: flex;
-  background-color: #fabc2c;
+  background-color: transparent;
   justify-content: center;
   align-items: center;
   gap: 2rem;
@@ -130,10 +130,11 @@
   top: 100%; /* Attach it directly below the navbar */
   left: 50%; /* Align from the center horizontally */
   transform: translateX(-50%); /* Offset the left to truly center */
-  background-color: lightgray;
+  background-color: rgb(10, 10, 10);
   padding: 2rem;
   z-index: 999; /* Ensure the dropdown appears on top */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow for better visibility */
+  color: white;
 }
 
 .dropdown_menus ul {

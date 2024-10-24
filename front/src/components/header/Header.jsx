@@ -1,5 +1,5 @@
 // import React from 'react'
-import Logo from "../../assets/Logo.png";
+import Logo from "../../assets/Logo_2.png";
 // import Data from "./Rates";
 import "./Header.css";
 import Language from "./Language";
@@ -7,7 +7,7 @@ import { useState } from "react";
 import { data1, data3, data5 } from "../footer/Footer";
 import Cross from "../../assets/cross.png";
 import Cancel from "../../assets/cancel.png";
-import Dropdowns from "./Dropdowns";
+// import Dropdowns from "./Dropdowns";
 import { Link } from "react-router-dom";
 import RatesSlider from "./RatesSlider";
 
@@ -41,7 +41,7 @@ const Header = () => {
         </div>
       </div>
 
-      <Dropdowns />
+      {/* <Dropdowns /> */}
 
       <nav className="mobile_nav">
         <svg

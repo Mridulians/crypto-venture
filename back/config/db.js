@@ -1,11 +1,8 @@
-
-
+import dotenv from "dotenv";
 import mongoose from "mongoose";
 
+const mongoDbUrl = process.env.MONGODB_URL;
+
 export const connectDB = async () => {
-  await mongoose
-    .connect(
-      "mongodb+srv://gmridul898:MAq90xgPQ6MxPNSV@cluster0.nzdkm.mongodb.net/Crypto_venture"
-    )
-    .then(() => console.log("DB CONNECTED"));
+  await mongoose.connect(mongoDbUrl).then(() => console.log("DB CONNECTED"));
 };

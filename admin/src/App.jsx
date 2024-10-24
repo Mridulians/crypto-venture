@@ -12,7 +12,7 @@ import { Routes , Route} from 'react-router-dom'
 
 const App = () => {
     
-  const url = 'http://localhost:4000';
+  const url = 'https://crypto-venture-backend.onrender.com';
 
   return (
     <div>

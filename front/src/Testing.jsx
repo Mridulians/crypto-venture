@@ -1,11 +1,12 @@
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import moment from "moment";
-import {
-  EyeIcon,
-  HeartIcon,
-  ChatBubbleOvalLeftEllipsisIcon,
-} from "@heroicons/react/24/outline"; // Heroicons for logos
+// import {
+//   EyeIcon,
+//   HeartIcon,
+//   ChatBubbleOvalLeftEllipsisIcon,
+// } from "@heroicons/react/24/outline"; // Heroicons for logos
+import { FaEye, FaThumbsUp, FaComment, FaShare } from "react-icons/fa";
 import Heart from "./assets/Heart.png";
 import Close from "./assets/close.png";
 
@@ -29,7 +30,7 @@ const Testing = () => {
   const fetchVideos = async () => {
     try {
       const searchResponse = await axios.get(
-        "http://localhost:4000/api/youtube",
+        "https://crypto-venture-backend.onrender.com/api/youtube",
         {
           params: {
             regionCode: "US", // Optionally, pass regionCode
@@ -43,6 +44,7 @@ const Testing = () => {
           views: Math.floor(Math.random() * 10000) + 500, // Random views count
           likes: Math.floor(Math.random() * 1000) + 50, // Random likes count
           comments: Math.floor(Math.random() * 500) + 10, // Random comments count
+          shares: Math.floor(Math.random() * 500) + 10, // Random comments count
           liked: false, // Track if the video is liked by the user
         },
       }));
@@ -103,7 +105,7 @@ const Testing = () => {
   };
 
   return (
-    <div className="p-4 mt-">
+    <div className="p-4 pt-[2rem]">
       {/* <h1 className="text-2xl font-bold text-center mb-6">
         Top Cryptocurrency Videos
       </h1> */}
@@ -139,7 +141,7 @@ const Testing = () => {
         {videos.map((video) => (
           <div
             key={video.id.videoId}
-            className="bg-white border-[2px] border-solid border-gray-400 rounded-lg hover:shadow-custom-inset-2 overflow-hidden transform hover:scale-105 transition-transform duration-200 cursor-pointer"
+            className="bg-white border-[2px] border-solid border-gray-400 rounded-lg overflow-hidden transform transition-transform duration-200 cursor-pointer"
             onClick={() => handleVideoClick(video.id.videoId)}
           >
             <img
@@ -149,7 +151,7 @@ const Testing = () => {
             />
             <div className="p-4">
               <h3 className="font-bold text-lg mb-2">
-                {video.snippet.title.slice(0,20)}
+                {video.snippet.title.slice(0, 20)}
               </h3>
               <p className="text-[1.1rem] text-red-600 mb-[15px] mt-[15px] font-bold">
                 Uploaded: {timeAgo(video.snippet.publishedAt)}
@@ -158,15 +160,20 @@ const Testing = () => {
                 Play Video
               </p> */}
 
-              <div className="flex justify-between items-center mt-4 text-gray-600 space-x-4">
-                <p className="text-sm flex items-center">
-                  <EyeIcon className="w-5 h-5 mr-1" />
+              <div className="flex justify-between items-center mt-4 text-black space-x-4">
+                <div className="flex items-center cursor-pointer hover:text-purple-500">
+                  <FaEye className="mr-2" />{" "}
                   <span className="font-bold">{video.customStats.views}</span>
-                </p>
+                </div>
+
+                <div className="flex items-center cursor-pointer hover:text-red-500">
+                  <FaShare className="mr-2" />{" "}
+                  <span>{video.customStats.views}</span>
+                </div>
 
                 <p
                   className={`text-sm flex items-center cursor-pointer ${
-                    video.customStats.liked ? "text-red-500" : "text-gray-600"
+                    video.customStats.liked ? "text-red-500" : "text-black"
                   }`}
                   onClick={(e) => {
                     e.stopPropagation();
@@ -174,26 +181,37 @@ const Testing = () => {
                   }}
                 >
                   {video.customStats.liked ? (
-                    <img src={Heart} alt="" className="w-[30px] h-[30px]" />
+                    <>
+                      <img src={Heart} alt="" className="w-[30px] h-[30px]" />
+                      <span className="font-bold">
+                        {video.customStats.likes}
+                      </span>
+                    </>
                   ) : (
-                    <HeartIcon className="w-5 h-5 mr-1" />
+                    <div className="flex items-center cursor-pointer hover:text-blue-500">
+                      <FaThumbsUp className="mr-2" />{" "}
+                      <span className="font-bold">
+                        {video.customStats.likes}
+                      </span>
+                    </div>
                   )}
-
-                  <span className="font-bold">{video.customStats.likes}</span>
                 </p>
 
-                <p className="text-sm flex items-center">
+                {/* <p className="text-sm flex items-center">
                   <ChatBubbleOvalLeftEllipsisIcon className="w-5 h-5 mr-1" />
                   <span className="font-bold">
                     {video.customStats.comments}
                   </span>
-                </p>
+                </p> */}
+                <div className="flex items-center cursor-pointer hover:text-green-500">
+                  <FaComment className="mr-2" />{" "}
+                  <span> {video.customStats.comments}</span>
+                </div>
               </div>
             </div>
           </div>
         ))}
       </div>
-      
     </div>
   );
 };
